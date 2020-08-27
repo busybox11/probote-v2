@@ -1,0 +1,23 @@
+{
+  "name": "probote",
+  "version": "1.0.0",
+  "description": "Un bot multi-plateforme pour Pronote",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/busybox11/probote-v2.git"
+  },
+  "keywords": [
+    "pronote",
+    "bot"
+  ],
+  "author": "busybox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/busybox11/probote-v2/issues"
+  },
+  "homepage": "https://github.com/busybox11/probote-v2#readme"
+}

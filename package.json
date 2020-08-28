@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/busybox11/probote-v2/issues"
   },
-  "homepage": "https://github.com/busybox11/probote-v2#readme"
+  "homepage": "https://github.com/busybox11/probote-v2#readme",
+  "dependencies": {
+    "sqlite3": "^5.0.0"
+  }
 }

@@ -6,4 +6,5 @@ client.on('message', (receivedMessage) => {
     if (receivedMessage.author == client.user) {
         return
     }
-})
+});
+

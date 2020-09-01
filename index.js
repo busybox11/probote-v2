@@ -1,7 +1,6 @@
-let childProcess = require('child_process');
-
+const pronote = require('./pronote/index');
 const { enable_discord } = require('./config');
 
 if (enable_discord == 'true') {
-    var process = childProcess.fork("./clients/discord/index.js");
+    const discord = require("./clients/discord/index");
 }

@@ -1,0 +1,1 @@
+exports.ping = require('./ping');

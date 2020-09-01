@@ -15,3 +15,5 @@ pronote.logIn().catch(err => {
         const discord = require('./clients/discord/index');
     }
 })
+
+const modules = require('./modules');

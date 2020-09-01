@@ -7,4 +7,8 @@ client.on('ready', () => {
     console.log("[DISCORD] Logged in as " + client.user.tag)
 });
 
+module.exports = { client }
+
+require('./messages');
+
 client.login(discord_bot_token);

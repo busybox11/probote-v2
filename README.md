@@ -4,7 +4,7 @@ Rewrite de Probote en NodeJS
 ## Fonctionnalités
 - [ ] Devoirs
 - [ ] Changements de cours
-- [ ] Fichiers
+- [ ] Notes
 - [ ] Menu de la cantine
 - [ ] Infos
 - [ ] Bulletins

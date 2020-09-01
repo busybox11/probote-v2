@@ -1,5 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
+
+let session;
+
+function setSession(value) {
+	session = value;
+	module.exports.session = value;
+}
+
 module.exports = {
 	bot_prefix: process.env.BOT_PREFIX,
 	pronote_url: process.env.PRONOTE_URL,
@@ -7,5 +15,7 @@ module.exports = {
 	pronote_mdp: process.env.PRONOTE_MDP,
 	pronote_cas: process.env.PRONOTE_CAS,
 	enable_discord: process.env.ENABLE_DISCORD,
-	discord_bot_token: process.env.DISCORD_BOT_TOKEN
+	discord_bot_token: process.env.DISCORD_BOT_TOKEN,
+	session,
+	setSession
 };

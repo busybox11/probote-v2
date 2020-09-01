@@ -8,8 +8,13 @@ pronote.logIn().catch(err => {
         console.error(err);
     }
     process.exit(1);
-}).then(function () {
-    const { enable_discord } = require('./config');
+}).then(loginSession => {
+    const { enable_discord, setSession } = require('./config');
+    
+    setSession(loginSession);
+    
+    const { session } = require('./config');
+    console.log('[PRONOTE] Logged in as ' + session.user.name);
 
     if (enable_discord == 'true') {
         const discord = require('./clients/discord/index');

@@ -17,7 +17,7 @@ client.on('message', (receivedMessage) => {
     else if (receivedMessage.content.toLowerCase().substring(0,4) == "pro ") {
         // TODO: use modules to determine which function needs to be loaded
         if (receivedMessage.content.toLowerCase() == "pro ping") {
-            sendMessage(receivedMessage, modules.basic.ping.msgPing());
+            sendMessage(receivedMessage, modules.basic.ping.runDiscord());
         }
     }
 })

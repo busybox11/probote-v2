@@ -1,8 +1,8 @@
 function consolePing() {
-    console.log('Pong');
+    console.log('Pong !');
 }
 
-function msgPing() {
+function main() {
     msg = {
         useEmbed: false,
         content: "Pong !"
@@ -10,7 +10,16 @@ function msgPing() {
 
     return msg;
 }
+
+function runDiscord() {
+    return main();
+}
+
 module.exports = {
+    name: "Ping",
+    desc: "Ping command",
+    usage: "ping",
     consolePing,
-    msgPing
+    main,
+    runDiscord
 }

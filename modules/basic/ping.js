@@ -1,3 +1,5 @@
+const modules = require('../../modules');
+
 function consolePing() {
     console.log('Pong !');
 }
@@ -12,7 +14,7 @@ function main() {
 }
 
 function runDiscord(message) {
-    console.log(`[PING] ${message.author.tag} in #${message.channel.name}`);
+    modules.logs.cli.log('PING', `${message.author.tag} in #${message.channel.name}`);
     return main();
 }
 

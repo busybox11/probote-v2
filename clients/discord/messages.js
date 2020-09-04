@@ -4,13 +4,13 @@ const modules = require('../../modules');
 const config = require('../../config');
 const pronote_module = require('../../pronote/modules');
 
-function sendMessage(receivedMessage, msg) {
+function sendMessage(channel, msg) {
     // TODO: Add embed support
-    receivedMessage.channel.startTyping();
+    channel.startTyping();
     if (msg.useEmbed == false) {
-        receivedMessage.channel.send(msg.content);
+        channel.send(msg.content);
     }
-    receivedMessage.channel.stopTyping(true);
+    channel.stopTyping(true);
 }
 
 client.on('message', async receivedMessage => {
@@ -22,11 +22,15 @@ client.on('message', async receivedMessage => {
     else if (receivedMessage.content.toLowerCase().substring(0, config.bot_prefix.length) == config.bot_prefix) {
         // TODO: use modules to determine which function needs to be loaded
         if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}ping`) {
-            sendMessage(receivedMessage, modules.basic.ping.runDiscord(receivedMessage));
+            sendMessage(receivedMessage.channel, modules.basic.ping.runDiscord(receivedMessage));
         }
 
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}trimestre`) {
-            sendMessage(receivedMessage, await pronote_module.commands.trimestre.runDiscord(receivedMessage));
+            sendMessage(receivedMessage.channel, await pronote_module.commands.trimestre.runDiscord(receivedMessage));
         }
     }
 })
+
+module.exports = {
+    sendMessage
+}

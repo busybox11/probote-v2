@@ -6,9 +6,11 @@ const pronote_module = require('../../pronote/modules');
 
 function sendMessage(receivedMessage, msg) {
     // TODO: Add embed support
+    receivedMessage.channel.startTyping();
     if (msg.useEmbed == false) {
         receivedMessage.channel.send(msg.content);
     }
+    receivedMessage.channel.stopTyping(true);
 }
 
 client.on('message', async receivedMessage => {

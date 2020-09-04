@@ -24,6 +24,6 @@ module.exports = {
     chan_logs
 }
 
-require('./messages');
+const messages = require('./messages');
 
 client.login(discord_bot_token);

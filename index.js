@@ -15,7 +15,7 @@ pronote.logIn().catch(err => {
     
     const { session } = require('./config');
     console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name);
-
+    
     if (enable_discord == 'true') {
         const discord = require('./clients/discord/index');
     }

@@ -25,8 +25,8 @@ client.on('message', async receivedMessage => {
             sendMessage(receivedMessage.channel, modules.basic.ping.runDiscord(receivedMessage));
         }
 
-        else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}trimestre`) {
-            sendMessage(receivedMessage.channel, await pronote_module.commands.trimestre.runDiscord(receivedMessage));
+        else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}moy`) {
+            sendMessage(receivedMessage.channel, await pronote_module.commands.moyenne.runDiscord(receivedMessage));
         }
     }
 })

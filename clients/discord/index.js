@@ -15,10 +15,6 @@ client.on('ready', () => {
     client.user.setActivity(session.user.establishment, { type: 'WATCHING' });
 });
 
-require('./messages');
-
-client.login(discord_bot_token);
-
 module.exports = { 
     client,
     chan_devoirs,
@@ -27,3 +23,7 @@ module.exports = {
     chan_edt,
     chan_logs
 }
+
+require('./messages');
+
+client.login(discord_bot_token);

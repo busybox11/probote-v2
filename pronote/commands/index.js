@@ -1,1 +1,1 @@
-exports.trimestre = require('./trimestre');
+exports.moyenne = require('./moyenne');

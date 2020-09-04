@@ -4,7 +4,7 @@ async function main() {
     const marks = await session.marks();
     msg = {
         useEmbed: false,
-        content: `${marks.averages.studentClass}`
+        content: `Moyenne du trimestre actuel : **${marks.averages.studentClass}**`
     }
     
     return msg;

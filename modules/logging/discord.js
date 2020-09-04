@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
-const { client } = require('../../clients/discord');
+const { client, chan_logs } = require('../../clients/discord');
 const d_messages = require('../../clients/discord/messages');
 
-async function sendLog(channel, msg) {
+async function sendLog(msg) {
+    //TODO: support embeds and content
+    chan_logs.send(msg);
 }
 
 module.exports = {

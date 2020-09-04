@@ -11,7 +11,8 @@ function main() {
     return msg;
 }
 
-function runDiscord() {
+function runDiscord(message) {
+    console.log(`[PING] ${message.author.tag} in #${message.channel.name}`);
     return main();
 }
 

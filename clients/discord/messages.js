@@ -22,11 +22,11 @@ client.on('message', async receivedMessage => {
     else if (receivedMessage.content.toLowerCase().substring(0, config.bot_prefix.length) == config.bot_prefix) {
         // TODO: use modules to determine which function needs to be loaded
         if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}ping`) {
-            sendMessage(receivedMessage, modules.basic.ping.runDiscord());
+            sendMessage(receivedMessage, modules.basic.ping.runDiscord(receivedMessage));
         }
 
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}trimestre`) {
-            sendMessage(receivedMessage, await pronote_module.commands.trimestre.runDiscord());
+            sendMessage(receivedMessage, await pronote_module.commands.trimestre.runDiscord(receivedMessage));
         }
     }
 })

@@ -10,7 +10,7 @@ async function main() {
     return msg;
 }
 
-async function runDiscord() {
+async function runDiscord(message) {
     return await main();
 }
 

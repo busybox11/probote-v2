@@ -1,5 +1,5 @@
 # probote-v2
-Rewrite de Probote en NodeJS
+**WIP** - Rewrite de Probote en NodeJS
 
 ## Fonctionnalités
 - [ ] Devoirs

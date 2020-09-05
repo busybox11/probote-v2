@@ -5,10 +5,16 @@ const config = require('../../config');
 const pronote_module = require('../../pronote/modules');
 
 function sendMessage(channel, msg) {
-    // TODO: Add embed support
     channel.startTyping();
+    // TODO: Better message sending code
     if (msg.useEmbed == false) {
         channel.send(msg.content);
+    } else {
+        if (msg.content == undefined) {
+            channel.send({embed: msg.embed});
+        } else {
+            channel.send({content: msg.content, embed: msg.embed});
+        }
     }
     channel.stopTyping(true);
 }

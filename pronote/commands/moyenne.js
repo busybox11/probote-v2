@@ -3,8 +3,11 @@ const { session } = require('../../config');
 async function main() {
     const marks = await session.marks();
     msg = {
-        useEmbed: false,
-        content: `Moyenne du trimestre actuel : **${marks.averages.studentClass}**`
+        useEmbed: true,
+        embed: {
+            title: 'Moyenne du trimestre actuel',
+            description: marks.averages.studentClass.toString()
+        }
     }
     
     return msg;

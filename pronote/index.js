@@ -10,7 +10,17 @@ async function logIn() {
     return session;
 }
 
+function fetchData() {
+    // Call fetch functions here
+}
+
+function startFetch() {
+    setInterval(fetchData, 15 * 60 * 1000); // Fetch every 15 minutes
+    fetchData();
+}
+
 module.exports = {
     logIn,
+    startFetch,
     session
 }

@@ -3,9 +3,11 @@ dotenv.config();
 
 let session;
 
-function setSession(value) {
+function setSession(value, callback) {
 	session = value;
 	module.exports.session = value;
+
+	callback();
 }
 
 module.exports = {

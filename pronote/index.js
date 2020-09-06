@@ -1,4 +1,5 @@
 const pronote = require('pronote-api');
+const prn_modules = require('./modules');
 
 const { pronote_url, pronote_id, pronote_mdp, pronote_cas } = require('../config');
 
@@ -10,8 +11,8 @@ async function logIn() {
     return session;
 }
 
-function fetchData() {
-    // Call fetch functions here
+async function fetchData() {
+    await prn_modules.commands.moyenne.updateDesc();
 }
 
 function startFetch() {

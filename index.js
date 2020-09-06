@@ -11,14 +11,14 @@ pronote.logIn().catch(err => {
 }).then(loginSession => {
     const { enable_discord, setSession } = require('./config');
     
-    setSession(loginSession);
-    
-    const { session } = require('./config');
-    console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name);
+    setSession(loginSession, function() {
+        const { session } = require('./config');
+        console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name);
 
-    pronote.startFetch();
-    
-    if (enable_discord == 'true') {
-        const discord = require('./clients/discord/index');
-    }
-})
+        pronote.startFetch();
+        
+        if (enable_discord == 'true') {
+            const discord = require('./clients/discord/index');
+        }
+    });
+});

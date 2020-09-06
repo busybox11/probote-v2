@@ -7,7 +7,7 @@
 - [ ] Notes
 - [ ] Menu de la cantine
 - [ ] Infos
-- [ ] Bulletins
+- [X] Trimestre
 
 ## Plateformes
 - [ ] Discord

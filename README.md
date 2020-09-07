@@ -1,13 +1,16 @@
 # probote-v2
 **WIP** - Rewrite de Probote en NodeJS
 
-## Fonctionnalités
+## Pronote
 - [ ] Devoirs
 - [ ] Changements de cours
 - [ ] Notes
 - [ ] Menu de la cantine
 - [ ] Infos
 - [X] Trimestre
+
+## Modules
+- [ ] Chuck Norris
 
 ## Plateformes
 - [ ] Discord

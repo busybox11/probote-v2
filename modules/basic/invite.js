@@ -1,6 +1,7 @@
 const { d_global_invite } = require('../../config');
 
 // API Request: https://api.qrserver.com/v1/create-qr-code/?data=<URL>&margin=20
+// TODO: Use an IPV6-only approach
 
 async function runDiscord() {
     let qr_url = `https://api.qrserver.com/v1/create-qr-code/?data=${d_global_invite}&margin=20`

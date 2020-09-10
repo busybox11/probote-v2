@@ -24,6 +24,7 @@ module.exports = {
 	d_chan_edt: process.env.D_CHAN_EDT,
 	d_chan_logs: process.env.D_CHAN_LOGS,
 	d_role_admin: process.env.D_ROLE_ADMIN,
+	d_global_invite: process.env.D_GLOBAL_INVITE,
 	session,
 	setSession
 };

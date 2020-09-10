@@ -34,6 +34,10 @@ client.on('message', async receivedMessage => {
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}moy`) {
             sendMessage(receivedMessage.channel, await pronote_module.commands.moyenne.runDiscord(receivedMessage));
         }
+
+        else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}invite`) {
+            sendMessage(receivedMessage.channel, await modules.basic.invite.runDiscord());
+        }
     }
 })
 

@@ -10,8 +10,8 @@
 - [X] Trimestre
 
 ## Modules
-- [ ] Chuck Norris
-- [X] Module d'invitations
+- [X] Fun : Chuck Norris
+- [X] Basic : Module d'invitations
         (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)
 
 ## Plateformes

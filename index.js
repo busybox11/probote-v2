@@ -13,10 +13,10 @@ pronote.logIn().catch(err => {
     
     setSession(loginSession, function() {
         const { session } = require('./config');
-        console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name);
-
-        pronote.startFetch();
+        console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name);        
         
         require('./clientsHandler');
+    
+        pronote.startFetch();
     });
 });

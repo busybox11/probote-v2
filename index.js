@@ -9,7 +9,7 @@ pronote.logIn().catch(err => {
     }
     process.exit(1);
 }).then(loginSession => {
-    const { enable_discord, setSession } = require('./config');
+    const { setSession } = require('./config');
     
     setSession(loginSession, function() {
         const { session } = require('./config');
@@ -17,8 +17,6 @@ pronote.logIn().catch(err => {
 
         pronote.startFetch();
         
-        if (enable_discord == 'true') {
-            const discord = require('./clients/discord/index');
-        }
+        require('./clientsHandler');
     });
 });

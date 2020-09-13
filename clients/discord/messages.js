@@ -38,6 +38,10 @@ client.on('message', async receivedMessage => {
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}invite`) {
             sendMessage(receivedMessage.channel, await modules.basic.invite.runDiscord());
         }
+
+        else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}chuck`) {
+            await modules.fun.chuck.getJoke();
+        }
     }
 })
 

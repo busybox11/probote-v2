@@ -15,6 +15,6 @@
         (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)
 
 ## Plateformes
-- [ ] Discord
+- [X] Discord
 - [ ] Instagram
 - [ ] Telegram

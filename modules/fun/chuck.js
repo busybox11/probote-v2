@@ -4,7 +4,7 @@ async function getJoke() {
     return new Promise(function(resolve, reject){
         request('http://api.icndb.com/jokes/random?firstName=Chuck&lastName=Norris', { json: true }, function (error, response, body) {
             if (error) { console.error('error:', error); }
-            resolve(body['value']['joke']);
+            resolve(body['value']['joke'].replace(/&quot;/g,'"'));
         });
     });
 }

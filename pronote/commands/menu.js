@@ -7,7 +7,17 @@ async function getMenu() {
 
 async function runDiscord() {
     menu = await getMenu();
-    console.log(menu);
+
+    msg = {
+        useEmbed: true,
+        embed: {
+            title: 'Menu de la cantine',
+            timestamp: menu[0].date,
+            fields: []
+        }
+    }
+
+    return msg;
 }
 
 module.exports = {

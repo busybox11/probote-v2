@@ -44,7 +44,7 @@ client.on('message', async receivedMessage => {
         }
 
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}menu`) {
-            await pronote_module.commands.menu.runDiscord();
+            sendMessage(receivedMessage.channel, await pronote_module.commands.menu.runDiscord());
         }
     }
 })

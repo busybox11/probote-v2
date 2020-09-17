@@ -5,7 +5,7 @@
 - [ ] Devoirs
 - [ ] Changements de cours
 - [ ] Notes
-- [ ] Menu de la cantine
+- [X] Menu de la cantine
 - [ ] Infos
 - [X] Trimestre
 

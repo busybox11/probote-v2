@@ -46,6 +46,10 @@ client.on('message', async receivedMessage => {
         else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}menu`) {
             sendMessage(receivedMessage.channel, await pronote_module.commands.menu.runDiscord());
         }
+
+        else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}saucisse`) {
+            sendMessage(receivedMessage.channel, await modules.fun.sausage.runDiscord());
+        }
     }
 })
 

@@ -1,12 +1,17 @@
-const sqlite3 = require('sqlite3');
+const { Sequelize } = require('sequelize');
 
-let db = new sqlite3.Database('./database/probote.db', (err) => {
-    if (err) {
-        console.error('[SQLITE] Couldn\'t initialize database connection');
-        console.error(err);
-    }
-    console.log('[SQLITE] Database connection initialized');
+const db = new Sequelize({
+    dialect: 'sqlite',
+    storage: 'database/probote.db',
+    logging: false
 });
+
+try {
+    db.authenticate();
+    console.log('[DATABASE] Succesfully initialized database connection');
+} catch (error) {
+    console.error('[DATABASE] Couldn\'t initialize database connection\n', error);
+}
 
 module.exports = {
     db

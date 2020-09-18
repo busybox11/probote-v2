@@ -5,12 +5,12 @@
 - [ ] Devoirs
 - [ ] Changements de cours
 - [ ] Notes
-- [ ] Menu de la cantine
+- [X] Menu de la cantine
 - [ ] Infos
 - [X] Trimestre
 
 ## Modules
-- [X] Fun : Chuck Norris
+- [X] Fun : Chuck Norris, saucisse
 - [X] Basic : Module d'invitations
         (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)
 

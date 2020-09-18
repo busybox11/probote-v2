@@ -19,6 +19,9 @@ async function runDiscord() {
 }
 
 module.exports = {
+    name: "Chuck Norris",
+    desc: "Envoie une blague de Chuck Norris (anglais uniquement).",
+    usage: "chuck",
     getJoke,
     runDiscord
 }

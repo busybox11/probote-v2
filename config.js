@@ -2,12 +2,33 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 let session;
+let clients = [];
+let activeClients = [];
+let areClientsReady = false;
+
+if (process.env.ENABLE_DISCORD == 'true') {
+	clients.push('Discord');
+}
 
 function setSession(value, callback) {
 	session = value;
 	module.exports.session = value;
 
 	callback();
+}
+
+function setActiveClient(value, callback) {
+	activeClients.push(value);
+	console.log(`[CLIENTS] ${value} is ready`);
+
+	if (activeClients.length == clients.length) {
+		areClientsReady = true;
+		module.exports.areClientsReady = areClientsReady;
+	}
+
+	if (callback && typeof callback === 'function') {
+		callback();
+	}
 }
 
 module.exports = {
@@ -22,9 +43,12 @@ module.exports = {
 	d_chan_notes: process.env.D_CHAN_NOTES,
 	d_chan_infos: process.env.D_CHAN_INFOS,
 	d_chan_edt: process.env.D_CHAN_EDT,
+	d_chan_menu: process.env.D_CHAN_MENU,
 	d_chan_logs: process.env.D_CHAN_LOGS,
 	d_role_admin: process.env.D_ROLE_ADMIN,
 	d_global_invite: process.env.D_GLOBAL_INVITE,
 	session,
+	areClientsReady,
+	setActiveClient,
 	setSession
 };

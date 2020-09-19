@@ -1,3 +1,5 @@
+const { getDB } = require('../../database');
+
 async function getMenu() {
     let { session } = require('../../config');
     const menu = await session.menu();
@@ -44,9 +46,14 @@ async function runDiscord() {
 async function autoFetch() {
     menu = await runDiscord();
     
-    let { chan_menu } = require('../../clients/discord');
-    let { sendMessage } = require('../../clients/discord/messages');
-    sendMessage(chan_menu, menu);
+    const fetch_db = require('../../database/utils/fetch');
+    if ((Math.abs(new Date().getTime() - fetchDB.getLastFetch('menu')) / 3600000) < 24) {
+        let { chan_menu } = require('../../clients/discord');
+        let { sendMessage } = require('../../clients/discord/messages');
+        sendMessage(chan_menu, menu);
+        
+        fetch_db.setLastFetch('menu', new Date().getTime());
+    }
 }
 
 module.exports = {

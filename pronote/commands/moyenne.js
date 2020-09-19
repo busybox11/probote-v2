@@ -28,10 +28,18 @@ async function updateDesc() {
     chan_notes.setTopic(`Moyenne générale du trimestre actuel : **${marks.averages.studentClass.toString()}**`);
 }
 
+async function autoFetch() {
+    updateDesc();
+
+    const fetch_db = require('../../database/utils/fetch');
+    fetch_db.setLastFetch('moyenne', new Date().getTime());
+}
+
 module.exports = {
     name: "Trimestre",
     desc: "Envoie les moyennes générales des trimestres de la classe.",
     usage: "trimestre",
     runDiscord,
-    updateDesc
+    updateDesc,
+    autoFetch
 }

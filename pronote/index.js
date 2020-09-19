@@ -16,8 +16,19 @@ async function fetchData() {
 }
 
 function startFetch() {
-    setInterval(fetchData, 15 * 60 * 1000); // Fetch every 15 minutes
-    fetchData();
+    function checkReady() {
+        let { areClientsReady } = require('../config');
+        if (!areClientsReady) {
+            console.log('[FETCH] Clients not ready, retrying in 5 seconds...')
+        } else {
+            clearInterval(wait);
+            setInterval(fetchData, 15 * 60 * 1000); // Fetch every 15 minutes
+            fetchData();
+        }
+    }
+    
+    let wait = setInterval(checkReady, 5 * 1000);
+    checkReady();
 }
 
 module.exports = {

@@ -2,12 +2,33 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 let session;
+let clients = [];
+let activeClients = [];
+let areClientsReady = false;
+
+if (process.env.ENABLE_DISCORD == 'true') {
+	clients.push('Discord');
+}
 
 function setSession(value, callback) {
 	session = value;
 	module.exports.session = value;
 
 	callback();
+}
+
+function setActiveClient(value, callback) {
+	activeClients.push(value);
+	console.log(`[CLIENTS] ${value} is ready`);
+
+	if (activeClients.length == clients.length) {
+		areClientsReady = true;
+		module.exports.areClientsReady = areClientsReady;
+	}
+
+	if (callback && typeof callback === 'function') {
+		callback();
+	}
 }
 
 module.exports = {
@@ -27,5 +48,7 @@ module.exports = {
 	d_role_admin: process.env.D_ROLE_ADMIN,
 	d_global_invite: process.env.D_GLOBAL_INVITE,
 	session,
+	areClientsReady,
+	setActiveClient,
 	setSession
 };

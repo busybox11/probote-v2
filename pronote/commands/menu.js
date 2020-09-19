@@ -47,11 +47,11 @@ async function autoFetch() {
     menu = await runDiscord();
     
     const fetch_db = require('../../database/utils/fetch');
-    if ((Math.abs(new Date().getTime() - fetchDB.getLastFetch('menu')) / 3600000) < 24) {
+    if ((Math.abs(new Date().getTime() - fetch_db.getLastFetch('menu')) / 3600000) < 24) {
         let { chan_menu } = require('../../clients/discord');
         let { sendMessage } = require('../../clients/discord/messages');
         sendMessage(chan_menu, menu);
-        
+
         fetch_db.setLastFetch('menu', new Date().getTime());
     }
 }

@@ -12,7 +12,8 @@ async function logIn() {
 }
 
 async function fetchData() {
-    await prn_modules.commands.moyenne.updateDesc();
+    await prn_modules.commands.moyenne.autoFetch();
+    await prn_modules.commands.menu.autoFetch();
 }
 
 function startFetch() {

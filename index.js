@@ -1,7 +1,7 @@
 const pronote = require('./pronote/index');
 const pronote_api = require('pronote-api');
 
-const { db } = require('./database');
+const db = require('./database');
 
 pronote.logIn().catch(err => {
     if (err.code === pronote_api.errors.WRONG_CREDENTIALS.code) {

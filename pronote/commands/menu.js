@@ -36,14 +36,23 @@ async function runDiscord() {
     else {
         return {
             useEmbed: false,
-            content: 'Aucun menu pour la période demandée.'
+            content: 'Aucun menu pour cette journée.'
         }
     }
+}
+
+async function autoFetch() {
+    menu = await getMenu();
+    
+    let { chan_menu } = require('../../clients/discord');
+    let { sendMessage } = require('../../clients/discord/messages');
+    sendMessage(chan_menu, menu);
 }
 
 module.exports = {
     name: "Menu",
     desc: "Envoie le menu de la cantine du jour.",
     usage: "menu",
-    runDiscord
+    runDiscord,
+    autoFetch
 }

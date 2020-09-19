@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { eventNames } = require('process');
 
 function getDB(dbname) {
     let dbcontent;

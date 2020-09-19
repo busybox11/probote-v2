@@ -30,13 +30,13 @@ function setDB(dbname, dbvar) {
             console.log(`[DATABASE] New database ${dbname}`);
         }
     } catch(err) {
-        console.error("[DATABASE] Couldn't check if database exists\n", err);
+        console.error("[DATABASE] Couldn't check if database exists\n", error);
     }
     try {
         fs.writeFileSync(`database/files/${dbname}.json`, JSON.stringify(dbvar));
         return dbvar;
     } catch (error) {
-        console.error("[DATABASE] Error while saving data\n", err);
+        console.error("[DATABASE] Error while saving data\n", error);
         throw error;
     }
 }

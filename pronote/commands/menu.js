@@ -42,7 +42,7 @@ async function runDiscord() {
 }
 
 async function autoFetch() {
-    menu = await getMenu();
+    menu = await runDiscord();
     
     let { chan_menu } = require('../../clients/discord');
     let { sendMessage } = require('../../clients/discord/messages');

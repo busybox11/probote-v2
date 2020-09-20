@@ -1,6 +1,7 @@
 async function getMenu() {
     let { session } = require('../../config');
     const menu = await session.menu();
+    console.log(menu);
 
     return menu;
 }
@@ -42,13 +43,15 @@ async function runDiscord() {
 }
 
 async function autoFetch() {
-    menu = await runDiscord();
-    
+    const { enable_discord } = require('../../config');
     const fetch_db = require('../../database/utils/fetch');
     if ((Math.abs(new Date().getTime() - fetch_db.getLastFetch('menu')) / 3600000) < 24) {
-        let { chan_menu } = require('../../clients/discord');
-        let { sendMessage } = require('../../clients/discord/messages');
-        sendMessage(chan_menu, menu);
+        if (enable_discord == 'true') {
+            dmenu = await runDiscord();
+            let { chan_menu } = require('../../clients/discord');
+            let { sendMessage } = require('../../clients/discord/messages');
+            sendMessage(chan_menu, dmenu);
+        }
 
         fetch_db.setLastFetch('menu', new Date().getTime());
     }

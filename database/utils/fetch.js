@@ -7,6 +7,7 @@ function setLastFetch(type, date) {
 }
 
 function getLastFetch(type) {
+    console.log('[DATABASE] Fetched date')
     general = getDB('general');
     
     fetch = eval(`general.lastFetch.${type}`);

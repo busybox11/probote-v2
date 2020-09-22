@@ -11,7 +11,7 @@ function getDB(dbname) {
                 console.log(`[DATABASE] New database with scheme ${dbname}`);
                 setDB(dbname, eval(`schemes.${dbname}`));
             } else {
-                console.log(`[DATABASE] New empty database ${dbname}`);
+                console.log(`[DATABASE] Empty database created with example ${dbname}`);
                 setDB(dbname, {});
             }
             dbcontent = JSON.parse(fs.readFileSync(`database/files/${dbname}.json`));

@@ -21,11 +21,12 @@ async function runDiscord() {
             }
         }
     
-        menu[0].meals[0].forEach(function(item){
+        menu[0].meals[0].forEach(function(item) {
             let listItems = '';
             item.forEach(function(mealItem){
                 listItems += mealItem.name + '\n';
-            });
+            }
+        );
     
             msg.embed.fields.push({
                 name: '** **',

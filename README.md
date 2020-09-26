@@ -1,6 +1,11 @@
 # probote-v2
 **WIP** - Rewrite de Probote en NodeJS
 
+## Rappel
+Ce bot est lié à un compte élève **mais pas** à la classe entière !
+
+Si le compte utilisé sur le bot n'a pas accès aux devoirs / notes / autres éléments de la classe (ex. groupes de langues, spécialités), le bot ne pourra pas non plus les afficher.
+
 ## Pronote
 - [ ] Devoirs
 - [ ] Changements de cours

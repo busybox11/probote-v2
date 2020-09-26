@@ -22,7 +22,7 @@ async function runDiscord() {
     marks = await getMarks();
     // evaluations = await getEvaluations();
 
-    console.log(marks);
+    // console.log(marks);
     // console.log(evaluations);
 
     msg = {

@@ -8,3 +8,5 @@ exports.general = {
         menu: null
     }
 }
+
+exports.homeworks = {}

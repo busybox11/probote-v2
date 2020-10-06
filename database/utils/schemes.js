@@ -9,4 +9,4 @@ exports.general = {
     }
 }
 
-exports.homeworks = {}
+exports.homeworks = []

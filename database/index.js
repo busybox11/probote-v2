@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function getDB(dbname) {
+async function getDB(dbname) {
     let dbcontent;
     try {
         dbcontent = JSON.parse(fs.readFileSync(`database/files/${dbname}.json`));
@@ -23,7 +23,7 @@ function getDB(dbname) {
     return dbcontent;
 }
 
-function setDB(dbname, dbvar) {
+async function setDB(dbname, dbvar) {
     try {
         if (!fs.existsSync(`database/files/${dbname}.json`)) {
             console.log(`[DATABASE] New database ${dbname}`);

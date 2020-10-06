@@ -14,6 +14,8 @@ async function logIn() {
 async function fetchData() {
     await prn_modules.commands.moyenne.autoFetch();
     await prn_modules.commands.menu.autoFetch();
+
+    await prn_modules.notifications.homeworks.autoFetch();
 }
 
 function startFetch() {

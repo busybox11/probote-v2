@@ -1,14 +1,14 @@
 let { getDB, setDB } = require('../../database');
 
-function setLastFetch(type, date) {
-    general = getDB('general');
+async function setLastFetch(type, date) {
+    let general = await getDB('general');
     eval(`general.lastFetch.${type} = ${date}`);
-    setDB('general', general);
+    await setDB('general', general);
 }
 
-function getLastFetch(type) {
+async function getLastFetch(type) {
+    let general = await getDB('general');
     console.log('[DATABASE] Fetched date')
-    general = getDB('general');
     
     fetch = eval(`general.lastFetch.${type}`);
     if (fetch == null) {

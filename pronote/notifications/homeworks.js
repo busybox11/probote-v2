@@ -11,9 +11,33 @@ async function autoFetch() {
     homeworks = await getHomeworks();
 
     const hw_db_util = require('../../database/utils/homeworks');
-    homeworks.forEach(async function (element) {
-        if (await hw_db_util.isHomeworkRegistered(element) == false) {
-            await hw_db_util.registerNewHomework(element);
+    homeworks.forEach(async function (homework) {
+        if (await hw_db_util.isHomeworkRegistered(homework) == false) {
+            await hw_db_util.registerNewHomework(homework);
+
+            // TODO: Add files support
+            msg = {
+                useEmbed: true,
+                embed: {
+                    author: {
+                        name: homework.subject,
+                    },
+                    footer: {
+                        text: homework.teachers[0],
+                    },
+                    title: `**${homework.title}**`,
+                    description: homework.description,
+                    timestamp: Date.parse(homework.to),
+                    color: homework.color
+                }
+            }
+
+            const { enable_discord } = require('../../config');
+            if (enable_discord == 'true') {
+                const { chan_devoirs } = require('../../clients/discord');
+                const { sendMessage } = require('../../clients/discord/messages');
+                sendMessage(chan_devoirs, msg);
+            }
         }
     });
 

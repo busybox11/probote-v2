@@ -17,6 +17,9 @@ async function autoFetch() {
 
             // TODO: - Add files support
             //       - Handle HTML in homework content
+            const TurndownService = require('turndown');
+            const turndownService = new TurndownService();
+
             msg = {
                 useEmbed: true,
                 embed: {
@@ -27,7 +30,7 @@ async function autoFetch() {
                         text: homework.teachers[0],
                     },
                     title: homework.title,
-                    description: homework.description,
+                    description: turndownService.turndown(homework.description),
                     timestamp: Date.parse(homework.to),
                     color: homework.color
                 }

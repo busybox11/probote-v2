@@ -3,8 +3,9 @@ const db = require('../index');
 async function isHomeworkRegistered(homework) {
     let db_homeworks = await db.getDB('homeworks');
 
-    var _ = require('lodash/core');
-    return _.some(db_homeworks, homework)
+    var _ = require('lodash');
+    return _.some(db_homeworks, JSON.parse(JSON.stringify(homework)))
+    // Yes, this is ugly, but we have to do it anyway since the objects contained in the database are stringified then parsed.
 }
 
 async function registerNewHomework(homework) {

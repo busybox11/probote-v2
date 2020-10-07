@@ -15,7 +15,8 @@ async function autoFetch() {
         if (await hw_db_util.isHomeworkRegistered(homework) == false) {
             await hw_db_util.registerNewHomework(homework);
 
-            // TODO: Add files support
+            // TODO: - Add files support
+            //       - Handle HTML in homework content
             msg = {
                 useEmbed: true,
                 embed: {

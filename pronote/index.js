@@ -7,6 +7,7 @@ let session;
 
 async function logIn() {
     session = await pronote.login(pronote_url, pronote_id, pronote_mdp, pronote_cas);
+    session.setKeepAlive(true);
 
     return session;
 }

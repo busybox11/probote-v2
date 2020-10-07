@@ -25,7 +25,7 @@ async function autoFetch() {
                     footer: {
                         text: homework.teachers[0],
                     },
-                    title: `**${homework.title}**`,
+                    title: homework.title,
                     description: homework.description,
                     timestamp: Date.parse(homework.to),
                     color: homework.color

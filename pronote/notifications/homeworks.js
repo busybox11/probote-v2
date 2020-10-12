@@ -11,36 +11,36 @@ async function autoFetch() {
     homeworks = await getHomeworks();
 
     const hw_db_util = require('../../database/utils/homeworks');
-    homeworks.forEach(async function (homework) {
+    for (const homework of homeworks) {
         if (await hw_db_util.isHomeworkRegistered(homework) == false) {
-            await hw_db_util.registerNewHomework(homework);
+            if (await hw_db_util.registerNewHomework(homework)) {
+                // TODO: - Add files support
+                const TurndownService = require('turndown');
+                const turndownService = new TurndownService();
+                
+                msg = {
+                    useEmbed: true,
+                    embed: {
+                        author: {
+                            name: homework.subject,
+                        },
+                        title: homework.title,
+                        description: turndownService.turndown(homework.description),
+                        timestamp: Date.parse(homework.to),
+                        color: homework.color
+                    }
+                }
 
-            // TODO: - Add files support
-            //       - Handle HTML in homework content
-            const TurndownService = require('turndown');
-            const turndownService = new TurndownService();
-            
-            msg = {
-                useEmbed: true,
-                embed: {
-                    author: {
-                        name: homework.subject,
-                    },
-                    title: homework.title,
-                    description: turndownService.turndown(homework.description),
-                    timestamp: Date.parse(homework.to),
-                    color: homework.color
+                const { enable_discord } = require('../../config');
+
+                if (enable_discord == 'true') {
+                    const { chan_devoirs } = require('../../clients/discord');
+                    const { sendMessage } = require('../../clients/discord/messages');
+                    await sendMessage(chan_devoirs, msg);
                 }
             }
-
-            const { enable_discord } = require('../../config');
-            if (enable_discord == 'true') {
-                const { chan_devoirs } = require('../../clients/discord');
-                const { sendMessage } = require('../../clients/discord/messages');
-                sendMessage(chan_devoirs, msg);
-            }
         }
-    });
+    };
 
     const fetch_db = require('../../database/utils/fetch');
     await fetch_db.setLastFetch('homeworks', new Date().getTime());

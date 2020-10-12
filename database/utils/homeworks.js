@@ -1,6 +1,8 @@
 const db = require('../index');
 
 async function isHomeworkRegistered(homework) {
+    homework.files = []
+
     let db_homeworks = await db.getDB('homeworks');
 
     const _ = require('lodash');
@@ -9,6 +11,8 @@ async function isHomeworkRegistered(homework) {
 }
 
 async function registerNewHomework(homework) {
+    homework.files = []
+
     let db_homeworks = await db.getDB('homeworks');
     db_homeworks.push(homework);
     await db.setDB('homeworks', db_homeworks);

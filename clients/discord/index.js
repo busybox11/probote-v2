@@ -8,7 +8,7 @@ let chan_devoirs, chan_notes, chan_infos, chan_edt, chan_menu, chan_logs;
 
 client.on('ready', () => {
     console.log("[DISCORD] Logged in as " + client.user.tag)
-    client.user.setActivity(session.user.establishment, { type: 'WATCHING' });
+    client.user.setActivity(session.params.establishment, { type: 'WATCHING' });
 
     chan_devoirs = client.channels.cache.get(config.d_chan_devoirs);
 	chan_notes = client.channels.cache.get(config.d_chan_notes);

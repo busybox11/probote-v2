@@ -1,6 +1,8 @@
 const db = require('../index');
 
 async function isHomeworkRegistered(homework) {
+    // Empty files array since it is constantly changing due to URLs
+    // This would have caused duplicate entries and events in DB
     homework.files = []
 
     let db_homeworks = await db.getDB('homeworks');
@@ -11,6 +13,8 @@ async function isHomeworkRegistered(homework) {
 }
 
 async function registerNewHomework(homework) {
+    // Empty files array since it is constantly changing due to URLs
+    // This would have caused duplicate entries and events in DB
     homework.files = []
 
     let db_homeworks = await db.getDB('homeworks');

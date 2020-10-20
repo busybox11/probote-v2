@@ -2,7 +2,7 @@ async function getHomeworks() {
     // MARKS
     // Regular notes (e.g. 14.62)    
     let { session } = require('../../config');
-    const homeworks = await session.homeworks();
+    const homeworks = await session.homeworks(Date.now(), Date(Date.now() + 12096e5));
 
     return homeworks;
 }

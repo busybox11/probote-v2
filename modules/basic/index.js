@@ -1,2 +1,2 @@
-exports.ping = require('./ping');
-exports.invite = require('./invite');
+exports.ping = require('./ping')
+exports.invite = require('./invite')

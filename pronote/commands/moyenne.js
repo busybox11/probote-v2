@@ -1,45 +1,45 @@
 async function getMarks() {
-    let { session } = require('../../config');
-    const marks = await session.marks();
+	let { session } = require('../../config')
+	const marks = await session.marks()
 
-    return marks;
+	return marks
 }
 
 async function runDiscord() {
-    marks = await getMarks();
+	let marks = await getMarks()
 
-    msg = {
-        useEmbed: true,
-        embed: {
-            title: 'Moyenne générale du trimestre actuel',
-            description: marks.averages.studentClass.toString()
-        }
-    }
+	let msg = {
+		useEmbed: true,
+		embed: {
+			title: 'Moyenne générale du trimestre actuel',
+			description: marks.averages.studentClass.toString()
+		}
+	}
 
-    await updateDesc();
+	await updateDesc()
 
-    return msg;
+	return msg
 }
 
 async function updateDesc() {
-    marks = await getMarks();
+	let marks = await getMarks()
 
-    let { chan_notes } = require('../../clients/discord');
-    chan_notes.setTopic(`Moyenne générale du trimestre actuel : **${marks.averages.studentClass.toString()}**`);
+	let { chan_notes } = require('../../clients/discord')
+	chan_notes.setTopic(`Moyenne générale du trimestre actuel : **${marks.averages.studentClass.toString()}**`)
 }
 
 async function autoFetch() {
-    updateDesc();
+	updateDesc()
 
-    const fetch_db = require('../../database/utils/fetch');
-    fetch_db.setLastFetch('moyenne', new Date().getTime());
+	const fetch_db = require('../../database/utils/fetch')
+	fetch_db.setLastFetch('moyenne', new Date().getTime())
 }
 
 module.exports = {
-    name: "Trimestre",
-    desc: "Envoie les moyennes générales des trimestres de la classe.",
-    usage: "trimestre",
-    runDiscord,
-    updateDesc,
-    autoFetch
+	name: 'Trimestre',
+	desc: 'Envoie les moyennes générales des trimestres de la classe.',
+	usage: 'trimestre',
+	runDiscord,
+	updateDesc,
+	autoFetch
 }

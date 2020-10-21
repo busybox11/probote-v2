@@ -1,2 +1,2 @@
-exports.discord = require('./discord');
-exports.cli = require('./cli');
+exports.discord = require('./discord')
+exports.cli = require('./cli')

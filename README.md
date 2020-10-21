@@ -16,7 +16,7 @@ Si le compte utilisé sur le bot n'a pas accès aux devoirs / notes / autres él
 ## Pronote
 - [X] Devoirs (Support des fichiers attachés manquant)
 - [ ] Changements de cours
-- [ ] Notes
+- [X] Notes
 - [X] Menu de la cantine
 - [ ] Infos
 - [X] Trimestre

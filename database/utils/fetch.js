@@ -9,8 +9,6 @@ async function setLastFetch(type, date) {
 async function getLastFetch(type) {
 	// eslint-disable-next-line no-unused-vars
 	let general = await getDB('general')
-	console.log('[DATABASE] Fetched date')
-    
 	let fetch = eval(`general.lastFetch.${type}`)
 	if (fetch == null) {
 		return 0

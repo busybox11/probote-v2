@@ -59,50 +59,52 @@ async function autoFetch() {
             mark.subject = subject.name
             if (await marks_db_util.isMarkRegistered(mark) == false) {
                 if (await marks_db_util.registerNewMark(mark)) {
-                    if (mark.title.trim() == '') {
-                        mark.title = '*Aucun titre*'
-                    }
-        
-                    msg = {
-                        useEmbed: true,
-                        embed: {
-                            author: {
-                                name: mark.subject,
-                            },
-                            title: mark.title,
-                            fields: [
-                                {
-                                    name: '**Moyenne**',
-                                    value: `${mark.average} / ${mark.scale}`,
-                                    inline: true
-                                },
-                                {
-                                    name: '**Coefficient**',
-                                    value: `${mark.coefficient}`,
-                                    inline: true
-                                },
-                                {
-                                    name: '**Note maximale**',
-                                    value: `${mark.max} / ${mark.scale}`,
-                                    inline: true
-                                },
-                                {
-                                    name: '**Note minimale**',
-                                    value: `${mark.min} / ${mark.scale}`,
-                                    inline: true
-                                }
-                            ],
-                            timestamp: Date.parse(mark.date),
-                            color: subject.color
+                    if (mark.average != undefined) {
+                        if (mark.title.trim() == '') {
+                            mark.title = '*Aucun titre*'
                         }
-                    }
-        
-                    const { enable_discord } = require('../../config');
-        
-                    if (enable_discord == 'true') {
-                        const { chan_notes } = require('../../clients/discord');
-                        const { sendMessage } = require('../../clients/discord/messages');
-                        await sendMessage(chan_notes, msg);
+            
+                        msg = {
+                            useEmbed: true,
+                            embed: {
+                                author: {
+                                    name: mark.subject,
+                                },
+                                title: mark.title,
+                                fields: [
+                                    {
+                                        name: '**Moyenne**',
+                                        value: `${mark.average} / ${mark.scale}`,
+                                        inline: true
+                                    },
+                                    {
+                                        name: '**Coefficient**',
+                                        value: `${mark.coefficient}`,
+                                        inline: true
+                                    },
+                                    {
+                                        name: '**Note maximale**',
+                                        value: `${mark.max} / ${mark.scale}`,
+                                        inline: true
+                                    },
+                                    {
+                                        name: '**Note minimale**',
+                                        value: `${mark.min} / ${mark.scale}`,
+                                        inline: true
+                                    }
+                                ],
+                                timestamp: Date.parse(mark.date),
+                                color: subject.color
+                            }
+                        }
+            
+                        const { enable_discord } = require('../../config');
+            
+                        if (enable_discord == 'true') {
+                            const { chan_notes } = require('../../clients/discord');
+                            const { sendMessage } = require('../../clients/discord/messages');
+                            await sendMessage(chan_notes, msg);
+                        }
                     }
                 }
             }      

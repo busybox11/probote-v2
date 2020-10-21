@@ -1,2 +1,2 @@
-exports.fetch = require('./fetch');
-exports.schemes = require('./schemes');
+exports.fetch = require('./fetch')
+exports.schemes = require('./schemes')

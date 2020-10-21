@@ -34,10 +34,17 @@ async function runDiscord() {
     }
 
     marks.subjects.forEach(function(item) {
-        msg.embed.fields.push({
-            name: `**${item.name}**`,
-            value: `Moyenne de la classe : **${item.averages.studentClass}**\nMoyenne max : **${item.averages.max}**\nMoyenne min : **${item.averages.min}**`
-        });
+        if (item.averages.studentClass == '') {
+            msg.embed.fields.push({
+                name: `**${item.name}**`,
+                value: `Aucune note`
+            });
+        } else {
+            msg.embed.fields.push({
+                name: `**${item.name}**`,
+                value: `Moyenne de la classe : **${item.averages.studentClass}**\nMoyenne max : **${item.averages.max}**\nMoyenne min : **${item.averages.min}**`
+            });
+        }
     });
 
     return msg;

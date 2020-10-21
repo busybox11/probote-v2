@@ -17,6 +17,7 @@ async function fetchData() {
     await prn_modules.commands.menu.autoFetch();
 
     await prn_modules.notifications.homeworks.autoFetch();
+    await prn_modules.notifications.notes.autoFetch();
 }
 
 function startFetch() {

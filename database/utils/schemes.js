@@ -10,3 +10,4 @@ exports.general = {
 }
 
 exports.homeworks = []
+exports.notes = []

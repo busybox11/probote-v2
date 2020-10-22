@@ -1,3 +1,5 @@
+![Bannière de Probote](Banner.png)
+
 # probote-v2
 **WIP** - Rewrite de Probote en NodeJS
 

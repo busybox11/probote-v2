@@ -15,6 +15,12 @@ Si le compte utilisé sur le bot n'a pas accès aux devoirs / notes / autres él
 - Copier `.env.example` vers `.env` et modifier les valeurs correspondantes (Guide en cours d'écriture)
 - Lancer le bot (fonctionne évidemment avec `pm2`)
 
+## Configuration
+**Section à venir**
+
+TODO:
+- Ajout des modules à charger dans la configuration
+
 ## Pronote
 - [X] Devoirs (Support des fichiers attachés manquant)
 - [ ] Changements de cours

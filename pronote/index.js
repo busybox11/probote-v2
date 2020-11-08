@@ -13,6 +13,8 @@ async function logIn() {
 }
 
 async function fetchData() {
+   # TODO
+   #   - Use config to enable modules or not
 	await prn_modules.commands.moyenne.autoFetch()
 	await prn_modules.commands.menu.autoFetch()
 

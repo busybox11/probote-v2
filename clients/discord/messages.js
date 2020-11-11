@@ -50,6 +50,10 @@ client.on('message', async receivedMessage => {
 			sendMessage(receivedMessage.channel, await modules.fun.sausage.runDiscord())
 		}
 
+		else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}quote`) {
+			sendMessage(receivedMessage.channel, await modules.fun.quotes.runDiscord())
+		}
+
 		else if (receivedMessage.content.toLowerCase() == `${config.bot_prefix}note`) {
 			sendMessage(receivedMessage.channel, await pronote_module.notifications.notes.runDiscord())
 		}

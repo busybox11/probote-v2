@@ -35,7 +35,7 @@ TODO:
 - Fun :
    * [X] Chuck Norris
    * [X] Saucisse
-   * [ ] Inspirobot
+   * [X] Inspirobot
 - Basic :
    * [X] Module d'invitations
             (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)

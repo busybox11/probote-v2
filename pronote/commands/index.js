@@ -1,2 +1,2 @@
-exports.moyenne = require('./moyenne');
-exports.menu = require('./menu');
+exports.moyenne = require('./moyenne')
+exports.menu = require('./menu')

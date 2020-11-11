@@ -1,2 +1,2 @@
-exports.notifications = require('./notifications');
-exports.commands = require('./commands');
+exports.notifications = require('./notifications')
+exports.commands = require('./commands')

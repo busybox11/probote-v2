@@ -1,31 +1,31 @@
-const request = require('request');
+const request = require('request')
 
 async function getJoke() {
-    return new Promise(function(resolve, reject){
-        request('http://api.icndb.com/jokes/random?firstName=Chuck&lastName=Norris', { json: true }, function (error, response, body) {
-            if (error) { console.error('error:', error); }
-            try {
-                resolve(body['value']['joke'].replace(/&quot;/g,'"'));
-            } catch (err) {
-                resolve("Une erreur est survenue lors de la connexion au serveur.");
-            }
-        });
-    });
+	return new Promise(function(resolve){
+		request('http://api.icndb.com/jokes/random?firstName=Chuck&lastName=Norris', { json: true }, function (error, response, body) {
+			if (error) { console.error('error:', error) }
+			try {
+				resolve(body['value']['joke'].replace(/&quot;/g,'"'))
+			} catch (err) {
+				resolve('Une erreur est survenue lors de la connexion au serveur.')
+			}
+		})
+	})
 }
 
 async function runDiscord() {
-    msg = {
-        useEmbed: false,
-        content: await getJoke()
-    }
+	let msg = {
+		useEmbed: false,
+		content: await getJoke()
+	}
 
-    return msg;
+	return msg
 }
 
 module.exports = {
-    name: "Chuck Norris",
-    desc: "Envoie une blague de Chuck Norris (anglais uniquement).",
-    usage: "chuck",
-    getJoke,
-    runDiscord
+	name: 'Chuck Norris',
+	desc: 'Envoie une blague de Chuck Norris (anglais uniquement).',
+	usage: 'chuck',
+	getJoke,
+	runDiscord
 }

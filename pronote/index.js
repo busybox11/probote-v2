@@ -23,16 +23,6 @@ async function fetchData() {
 }
 
 function startFetch() {
-<<<<<<< HEAD
-    function checkReady() {
-        let { areClientsReady } = require('../config');
-        if (areClientsReady) {
-            clearInterval(wait);
-            setInterval(fetchData, 15 * 60 * 1000); // Fetch every 15 minutes
-            fetchData();
-        }
-    }
-=======
 	function checkReady() {
 		let { areClientsReady } = require('../config')
 		if (areClientsReady) {
@@ -41,20 +31,13 @@ function startFetch() {
 			fetchData()
 		}
 	}
->>>>>>> a6153eb371f3831cf11fffe4813fb4ef05010002
     
 	let wait = setInterval(checkReady, 5 * 1000)
 	checkReady()
 }
 
 module.exports = {
-<<<<<<< HEAD
-    logIn,
-    startFetch,
-    session
-=======
 	logIn,
 	startFetch,
 	session
->>>>>>> a6153eb371f3831cf11fffe4813fb4ef05010002
 }

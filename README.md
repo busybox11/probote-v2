@@ -32,9 +32,13 @@ TODO:
 - [X] Trimestre
 
 ## Modules
-- [X] Fun : Chuck Norris, saucisse
-- [X] Basic : Module d'invitations
-        (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)
+- Fun :
+   * [X] Chuck Norris
+   * [X] Saucisse
+   * [ ] Inspirobot
+- Basic :
+   * [X] Module d'invitations
+            (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)
 
 ## Plateformes
 - [X] Discord

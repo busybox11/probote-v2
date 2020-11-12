@@ -35,6 +35,7 @@ TODO:
 - Fun :
    * [X] Chuck Norris
    * [X] Saucisse
+   * [X] Loutre
    * [X] Inspirobot
 - Basic :
    * [X] Module d'invitations

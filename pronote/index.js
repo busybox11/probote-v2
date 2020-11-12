@@ -13,13 +13,12 @@ async function logIn() {
 }
 
 async function fetchData() {
-   // TODO
-   //   - Use config to enable modules or not
-	//await prn_modules.commands.moyenne.autoFetch()
-	//await prn_modules.commands.menu.autoFetch()
-//
-	//await prn_modules.notifications.homeworks.autoFetch()
-	//await prn_modules.notifications.notes.autoFetch()
+	// TODO
+	//   - Use config to enable modules or not
+	await prn_modules.commands.moyenne.autoFetch()
+	await prn_modules.commands.menu.autoFetch()
+	await prn_modules.notifications.homeworks.autoFetch()
+	await prn_modules.notifications.notes.autoFetch()
 }
 
 function startFetch() {

@@ -9,7 +9,8 @@ async function getSausage() {
 		'https://www.johnsonville.com/.imaging/mte/johnsonville-retail/640-wide/dam/johnsonville/product-images/original-breakfast-links/jcr:content/original-breakfast-links.png',
 		'https://www.thespruceeats.com/thmb/_Myz0lvufimfAjehD7EU24Qlziw=/948x533/smart/filters:no_upscale()/lamb-sausage-copy-56a6041b3df78cf7728aea60.jpg',
 		'https://img.taste.com.au/VYcz0pA0/taste/2016/11/easy-sausage-rolls-28532-1.jpeg',
-		'https://www.curiouscuisiniere.com/wp-content/uploads/2016/06/Homemade-Boerewors-South-African-Sausage-6540.450-320x240.jpg'
+		'https://www.curiouscuisiniere.com/wp-content/uploads/2016/06/Homemade-Boerewors-South-African-Sausage-6540.450-320x240.jpg',
+		'https://media.istockphoto.com/photos/european-otter-lutra-lutra-6-years-old-portrait-standing-against-picture-id823913136?s=170667a' // see, I pulled a sneaky on ya
 	]
 
 	return sausagePics[Math.floor(Math.random() * sausagePics.length)]

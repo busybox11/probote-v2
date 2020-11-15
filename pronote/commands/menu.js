@@ -1,7 +1,6 @@
 async function getMenu() {
 	let { session } = require('../../config')
 	const menu = await session.menu()
-	console.log(menu)
 
 	return menu
 }

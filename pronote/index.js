@@ -8,8 +8,8 @@ let session
 async function logIn() {
 	// TODO:
 	//   - Implement relogin on error 5
-	//	(This can be made by using the callback function of the session's
-	//	 setKeepAlive function)
+	//      (This can be made by using the onError parameter (a function) of
+	//      the session's setKeepAlive function)
 	session = await pronote.login(pronote_url, pronote_id, pronote_mdp, pronote_cas)
 	session.setKeepAlive(true)
 

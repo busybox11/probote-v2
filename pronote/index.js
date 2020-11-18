@@ -32,7 +32,7 @@ async function logIn(callback) {
 async function fetchData() {
 	// TODO
 	//   - Use config to enable modules or not
-	await logIn(function() {
+	await logIn(async function() {
 		await prn_modules.commands.moyenne.autoFetch()
 		await prn_modules.commands.menu.autoFetch()
 		await prn_modules.notifications.homeworks.autoFetch()

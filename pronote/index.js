@@ -32,7 +32,7 @@ async function logIn(callback) {
 async function fetchData() {
 	// TODO
 	//   - Use config to enable modules or not
-	await logIn(function() {
+	await logIn(async function() {
 		await prn_modules.commands.moyenne.autoFetch()
 		await prn_modules.commands.menu.autoFetch()
 		await prn_modules.notifications.homeworks.autoFetch()
@@ -45,7 +45,7 @@ function startFetch() {
 		let { areClientsReady } = require('../config')
 		if (areClientsReady) {
 			clearInterval(wait)
-			setInterval(fetchData, 15 * 60 * 1000) // Fetch every 15 minutes
+			setInterval(fetchData, 30 * 60 * 1000) // Fetch every 30 minutes
 			fetchData()
 		}
 	}

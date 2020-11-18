@@ -1,33 +1,27 @@
-const dotenv = require('dotenv');
-dotenv.config();
+const dotenv = require('dotenv')
+dotenv.config()
 
-let session;
-let clients = [];
-let activeClients = [];
-let areClientsReady = false;
+let session
+let clients = []
+let activeClients = []
+let areClientsReady = false
 
 if (process.env.ENABLE_DISCORD == 'true') {
-	clients.push('Discord');
+	clients.push('Discord')
 }
 
-function setSession(value, callback) {
-	session = value;
-	module.exports.session = value;
-
-	callback();
+function setSession(value) {
+	session = value
+	module.exports.session = value
 }
 
-function setActiveClient(value, callback) {
-	activeClients.push(value);
-	console.log(`[CLIENTS] ${value} is ready`);
+function setActiveClient(value) {
+	activeClients.push(value)
+	console.log(`[CLIENTS] ${value} is ready`)
 
 	if (activeClients.length == clients.length) {
-		areClientsReady = true;
-		module.exports.areClientsReady = areClientsReady;
-	}
-
-	if (callback && typeof callback === 'function') {
-		callback();
+		areClientsReady = true
+		module.exports.areClientsReady = areClientsReady
 	}
 }
 
@@ -51,4 +45,4 @@ module.exports = {
 	areClientsReady,
 	setActiveClient,
 	setSession
-};
+}

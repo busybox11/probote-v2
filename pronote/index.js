@@ -1,28 +1,43 @@
 const pronote = require('pronote-api')
 const prn_modules = require('./modules')
 
-const { pronote_url, pronote_id, pronote_mdp, pronote_cas } = require('../config')
+const { pronote_url, pronote_id, pronote_mdp, pronote_cas, setSession } = require('../config')
 
 let session
 
-async function logIn() {
-	// TODO:
-	//   - Implement relogin on error 5
-	//      (This can be made by using the onError parameter (a function) of
-	//      the session's setKeepAlive function)
+async function connect() {
 	session = await pronote.login(pronote_url, pronote_id, pronote_mdp, pronote_cas)
-	session.setKeepAlive(true)
+	session.setKeepAlive(false)
 
 	return session
+}
+
+async function logIn(callback) {
+	await connect().catch(err => {
+		if (err.code === pronote.errors.WRONG_CREDENTIALS.code) {
+			console.error('Mauvais identifiants')    
+		} else {
+			console.error(err)
+		}
+		process.exit(1)
+	}).then(loginSession => {
+		setSession(loginSession)
+	})
+	
+	if (callback && typeof callback === 'function') {
+		callback()
+	}
 }
 
 async function fetchData() {
 	// TODO
 	//   - Use config to enable modules or not
-	await prn_modules.commands.moyenne.autoFetch()
-	await prn_modules.commands.menu.autoFetch()
-	await prn_modules.notifications.homeworks.autoFetch()
-	await prn_modules.notifications.notes.autoFetch()
+	await logIn(function() {
+		await prn_modules.commands.moyenne.autoFetch()
+		await prn_modules.commands.menu.autoFetch()
+		await prn_modules.notifications.homeworks.autoFetch()
+		await prn_modules.notifications.notes.autoFetch()
+	})
 }
 
 function startFetch() {

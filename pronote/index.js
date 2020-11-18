@@ -45,7 +45,7 @@ function startFetch() {
 		let { areClientsReady } = require('../config')
 		if (areClientsReady) {
 			clearInterval(wait)
-			setInterval(fetchData, 15 * 60 * 1000) // Fetch every 15 minutes
+			setInterval(fetchData, 30 * 60 * 1000) // Fetch every 30 minutes
 			fetchData()
 		}
 	}

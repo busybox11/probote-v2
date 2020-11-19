@@ -26,10 +26,10 @@ function setActiveClient(value) {
 }
 
 const fetch = {
-	average: JSON.parse(process.env.FETCH_AVERAGE),
-	menu: JSON.parse(process.env.FETCH_MENU),
-	homeworks: JSON.parse(process.env.FETCH_HOMEWORKS),
-	notes: JSON.parse(process.env.FETCH_NOTES)
+	average: JSON.parse(process.env.FETCH_AVERAGE || true),
+	menu: JSON.parse(process.env.FETCH_MENU || true),
+	homeworks: JSON.parse(process.env.FETCH_HOMEWORKS || true),
+	notes: JSON.parse(process.env.FETCH_NOTES || true)
 }
 
 module.exports = {

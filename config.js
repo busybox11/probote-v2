@@ -25,6 +25,13 @@ function setActiveClient(value) {
 	}
 }
 
+const fetch = {
+	average: JSON.parse(process.env.FETCH_AVERAGE),
+	menu: JSON.parse(process.env.FETCH_MENU),
+	homeworks: JSON.parse(process.env.FETCH_HOMEWORKS),
+	notes: JSON.parse(process.env.FETCH_NOTES)
+}
+
 module.exports = {
 	bot_prefix: process.env.BOT_PREFIX,
 	pronote_url: process.env.PRONOTE_URL,
@@ -41,6 +48,7 @@ module.exports = {
 	d_chan_logs: process.env.D_CHAN_LOGS,
 	d_role_admin: process.env.D_ROLE_ADMIN,
 	d_global_invite: process.env.D_GLOBAL_INVITE,
+	fetch,
 	session,
 	areClientsReady,
 	setActiveClient,

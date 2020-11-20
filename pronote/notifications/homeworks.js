@@ -27,6 +27,7 @@ async function autoFetch() {
 						title: homework.title,
 						description: turndownService.turndown(homework.description),
 						timestamp: Date.parse(homework.to),
+						for: homework.for,
 						color: homework.color
 					}
 				}

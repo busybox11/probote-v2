@@ -5,10 +5,30 @@ const pronote_api = require('pronote-api')
 let db = require('./database')
 
 pronote.logIn(function() {
-	const { session } = require('./config')
+	const { session, fetch } = require('./config')
 	
-	console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name)        
-			
+	console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name)       
+
+	fetch_log = ""
+	function add_elem(elem) {
+		if (fetch_log.length == 0) {
+			fetch_log += `Enabled ${elem}`
+		} else {
+			fetch_log += `, ${elem}`
+		}
+	}
+
+	if (fetch.average)
+		add_elem('average')
+	if (fetch.menu)
+		add_elem('menu')
+	if (fetch.homeworks)
+		add_elem('homeworks')
+	if (fetch.notes)
+		add_elem('grades')
+	console.log(`[CONFIG] ${fetch_log}`)
+	delete fetch_log
+
 	require('./clientsHandler')
 
 	pronote.startFetch()

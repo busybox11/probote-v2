@@ -45,6 +45,10 @@ async function runDiscord() {
 async function autoFetch() {
 	const { enable_discord } = require('../../config')
 	const fetch_db = require('../../database/utils/fetch')
+	
+	// TODO:
+	//    - bugfix: when never fetched, it will not return true 
+	//      since the last fetch is not a number
 	if ((Math.abs(new Date().getTime() - fetch_db.getLastFetch('menu')) / 3600000) < 24) {
 		if (enable_discord == 'true') {
 			let dmenu = await runDiscord()

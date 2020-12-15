@@ -1,7 +1,11 @@
 async function getMarks() {
 	// MARKS
-	// Regular notes (e.g. 14.62)    
+	// Regular notes (e.g. 14.5)
 	let { session } = require('../../config')
+	
+	// TODO:
+	//    - Fix trimester bug which doesn't fetch last trimester 
+	//      when the default one hasn't started yet
 	const allMarks = await session.marks()
 
 	return allMarks

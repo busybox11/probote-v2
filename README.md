@@ -14,7 +14,8 @@ Si le compte utilisé sur le bot n'a pas accès aux devoirs / notes / autres él
     * `git clone https://github.com/busybox11/probote-v2` via HTTPS
     * `git clone git@github.com:busybox11/probote-v2.git` via SSH
 - Installer les dépendances (`npm i`)
-- Copier `.env.example` vers `.env` et modifier les valeurs correspondantes (Guide en cours d'écriture)
+- Copier le fichier `.env.example` vers un nouveau appelé `.env`
+- Modifier les valeurs correspondantes du fichier `.env` (Guide en cours d'écriture)
 - Lancer le bot (fonctionne évidemment avec `pm2`)
 
 ## Configuration

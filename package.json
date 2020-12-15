@@ -24,10 +24,10 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.20",
-    "pronote-api": "^2.2.0",
+    "pronote-api": "^2.3.0",
     "turndown": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.14.0"
+    "eslint": "^7.15.0"
   }
 }

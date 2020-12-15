@@ -9,7 +9,8 @@ pronote.logIn(function() {
 	
 	console.log('[PRONOTE] Logged in as ' + session.user.name + ', ' + session.user.studentClass.name)       
 
-	fetch_log = ""
+	let fetch_log = ''
+
 	function add_elem(elem) {
 		if (fetch_log.length == 0) {
 			fetch_log += `Enabled ${elem}`
@@ -26,8 +27,9 @@ pronote.logIn(function() {
 		add_elem('homeworks')
 	if (fetch.notes)
 		add_elem('grades')
+	if (fetch.informations)
+		add_elem('informations')
 	console.log(`[CONFIG] ${fetch_log}`)
-	delete fetch_log
 
 	require('./clientsHandler')
 

@@ -29,7 +29,8 @@ const fetch = {
 	average: JSON.parse(process.env.FETCH_AVERAGE || true),
 	menu: JSON.parse(process.env.FETCH_MENU || true),
 	homeworks: JSON.parse(process.env.FETCH_HOMEWORKS || true),
-	notes: JSON.parse(process.env.FETCH_NOTES || true)
+	notes: JSON.parse(process.env.FETCH_NOTES || true),
+	informations: JSON.parse(process.env.FETCH_INFORMATIONS || true)
 }
 
 module.exports = {

@@ -41,8 +41,8 @@ async function fetchData() {
 			await prn_modules.notifications.homeworks.autoFetch()
 		if (fetch.notes)
 			await prn_modules.notifications.notes.autoFetch()
-		if (fetch.informations)
-			await prn_modules.notifications.notes.autoFetch()
+		// if (fetch.informations)
+		// 	await prn_modules.informations.notes.autoFetch()
 	})
 }
 

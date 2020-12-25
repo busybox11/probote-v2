@@ -38,7 +38,6 @@ TODO:
    * [X] Saucisse
    * [X] Loutre
    * [X] Inspirobot
-   * [ ] Bats
 - Basic :
    * [X] Module d'invitations
             (Génère un QR code avec le lien d'invitation pour un partage du serveur plus facile)

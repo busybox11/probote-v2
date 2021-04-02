@@ -5,6 +5,8 @@ let session
 let clients = []
 let activeClients = []
 let areClientsReady = false
+let timeToRefresh = (process.env.TIME_TO_REFRESH || 30)
+console.log(timeToRefresh)
 
 if (process.env.ENABLE_DISCORD == 'true') {
 	clients.push('Discord')
@@ -52,6 +54,7 @@ module.exports = {
 	fetch,
 	session,
 	areClientsReady,
+	timeToRefresh,
 	setActiveClient,
 	setSession
 }

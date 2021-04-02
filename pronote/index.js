@@ -48,15 +48,15 @@ async function fetchData() {
 
 function startFetch() {
 	function checkReady() {
-		let { areClientsReady } = require('../config')
+		let { areClientsReady, timeToRefresh } = require('../config')
 		if (areClientsReady) {
 			clearInterval(wait)
-			setInterval(fetchData, 30 * 60 * 1000) // Fetch every 30 minutes
+			setInterval(fetchData, timeToRefresh * 60 * 1000) // Fetch every x minutes
 			fetchData()
 		}
 	}
     
-	let wait = setInterval(checkReady, 5 * 1000)
+	let wait = setInterval(checkReady, 5 * 1000) // Re-runs this function every 5 seconds until the client is fully logged in
 	checkReady()
 }
 

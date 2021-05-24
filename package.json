@@ -22,7 +22,7 @@
   "homepage": "https://github.com/busybox11/probote-v2#readme",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "lodash": "^4.17.21",
     "pronote-api": "^2.3.0",
     "turndown": "^7.0.0"

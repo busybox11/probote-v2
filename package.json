@@ -25,7 +25,7 @@
     "dotenv": "^8.2.0",
     "lodash": "^4.17.21",
     "pronote-api": "^2.3.0",
-    "turndown": "^7.0.0"
+    "turndown": "^7.1.0"
   },
   "devDependencies": {
     "eslint": "^7.21.0"

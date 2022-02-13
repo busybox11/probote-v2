@@ -1,7 +1,10 @@
+# CE BOT N'EST PLUS SUPPORTÉ ET NE FONCTIONNE PLUS
+Suite à la suppression de la librarie [pronote-api de Litarvan](https://github.com/Litarvan/pronote-api) effectuée par Index-Education, je ne suis plus en mesure de continuer le support de ce bot. Le téléchargement des dépendances nécessaires produira une erreur. Vous pouvez intégrer vous-mêmes une nouvelle implémentation de Pronote si vous le souhaitez, mais je ne peux plus le faire de mon côté.
+
 ![Bannière de Probote](Banner.png)
 
 # probote-v2
-**WIP** - Rewrite de Probote en NodeJS
+Rewrite de Probote en NodeJS
 
 ## Rappel
 Ce bot est lié à un compte élève **mais pas** à la classe entière !
